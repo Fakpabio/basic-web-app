@@ -44,14 +44,14 @@ export default function QueryProcessor(query: string): string {
 
 
       if (squareMatch) {
-        const i = 1;
-        while ( i < 7){
+        for (let i = 1;  i < 8; i++){
           const x: number = parseInt(squareMatch[i]);
 
           if ((Math.sqrt(x) == Math.floor(Math.sqrt(x))) && (Math.cbrt(x) == Math.floor(Math.cbrt(x)))){
             return x.toString();
           }
         }
+        return "";
       }
 
     const mulMatch = query.match(/What is (\d+) multiplied by (\d+)/);
