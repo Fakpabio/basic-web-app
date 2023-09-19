@@ -11,6 +11,11 @@ export default function QueryProcessor(query: string): string {
       "fakpabio"
     );
   }
+  if (query.toLowerCase().includes("what is your name")) {
+    return (
+      "forever"
+    );
+  }
 
 
   return "";
