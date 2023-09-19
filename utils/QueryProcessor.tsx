@@ -16,7 +16,27 @@ export default function QueryProcessor(query: string): string {
       "Akapojo"
     );
   }
+  if (query.toLowerCase().includes("what is your name")) {
+    return (
+      "Akapojo"
+    );
+  }
+  const addMatch = query.match(/What is (\d+) plus (\d+)/);
+  if (addMatch) {
+    const x: number = parseInt(addMatch[1]);
+    const y: number = parseInt(addMatch[2]);
+    return (x+y).toString();
+  }
 
+  const largeMatch = (
+    query.match(/Which of the following numbers is the largest: (\d+), (\d+), (\d+)?/))
+
+    if (largeMatch) {
+      const x: number = parseInt(largeMatch[1]);
+      const y: number = parseInt(largeMatch[2]);
+      const z: number = parseInt(largeMatch[3]);
+      return (Math.max(x,y,z)).toString();
+    }
 
   return "";
 }
